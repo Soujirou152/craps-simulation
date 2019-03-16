@@ -1,12 +1,13 @@
 
 public class Die
 {
-	private int lastRoll;
+	protected int lastRoll;
 
 	public Die()
 	{
 		// CrapsGame.println("Die's constructor called.");
-		this.roll();
+		//this.roll();
+		this.lastRoll = (int) (Math.random() * 6 + 1);
 	}
 
 	public Die(int firstValue) // overloaded constructor: different signature
