@@ -1,9 +1,12 @@
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.Before;
 
-class TestPredictableDie
+public class TestPredictableDie
 {
+	
 
 	@Test
 	public void test_predictable_die_one_value()
@@ -66,6 +69,13 @@ class TestPredictableDie
 		pd.roll();
 		
 		assertEquals(3, pd.getLastRoll());
+	}
+	
+	@Test
+	public void test_predictable_empty_initializer()
+	{
+				
+		Assertions.assertThrows(RuntimeException.class, () -> new PredictableDie(new int[] {}));
 	}
 	
 

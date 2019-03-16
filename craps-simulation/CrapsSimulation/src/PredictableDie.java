@@ -6,12 +6,24 @@ public class PredictableDie extends Die
 	
 	public PredictableDie(int[] seq)
 	{
+		if(seq.length == 0 || seq == null)
+		{
+			throw new RuntimeException();
+		}
+		this.throwSequence = seq;
+	}
+	
+	public void setThrowSequence(int[] seq)
+	{
+		if(seq.length == 0 || seq == null)
+		{
+			throw new RuntimeException();
+		}
 		this.throwSequence = seq;
 	}
 	
 	@Override public void roll()
-	{	
-		
+	{		
 		if(this.nextInSeq == throwSequence.length)
 		{
 			this.nextInSeq = 0;			
@@ -19,8 +31,7 @@ public class PredictableDie extends Die
 		
 		super.lastRoll = throwSequence[nextInSeq];
 		
-		this.nextInSeq++;
-		
+		this.nextInSeq++;		
 	}
 	
 	

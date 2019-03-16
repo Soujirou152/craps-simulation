@@ -6,6 +6,11 @@ public class CrookedDie1 extends Die
 		CrapsGame.println("  CrookedDie1's constructor called.");
 		
 	}
+	
+	public  static CrookedDie1 testStatic()
+	{
+		return new CrookedDie1();
+	}
 
 	public int getLastRoll() // this OVERRIDES Die's getLastRoll(), replacing
 								// it!

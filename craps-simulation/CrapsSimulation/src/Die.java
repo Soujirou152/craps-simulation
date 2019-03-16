@@ -5,7 +5,7 @@ public class Die
 
 	public Die()
 	{
-		// CrapsGame.println("Die's constructor called.");
+		CrapsGame.println("Die's constructor called.");
 		//this.roll();
 		this.lastRoll = (int) (Math.random() * 6 + 1);
 	}
@@ -45,5 +45,10 @@ public class Die
 	public String toString(int msg) // Overloading... but NOT overriding!
 	{
 		return msg + this.toString();
+	}
+	
+	public static Die testStatic()
+	{
+		return new Die(3);
 	}
 }
